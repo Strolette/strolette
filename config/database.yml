@@ -81,5 +81,5 @@ test:
 production:
   <<: *default
   database: strolette_production
-  username: strolette
+  username:
   password: <%= ENV['STROLETTE_DATABASE_PASSWORD'] %>
