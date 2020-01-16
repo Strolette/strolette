@@ -4,4 +4,9 @@ class ItemsController < ApplicationController
     @item = Item.find(params[:id])
     authorize @item
   end
+
+  def index
+    @items = Item.all
+    @items = policy_scope(Item)
+  end
 end
