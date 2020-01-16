@@ -1,0 +1,16 @@
+<div class="container">
+  Page de tous les items
+  <% @items.each do |item| %>
+  <p class="jumbotron">Nom de l'item: <%= item.title %></li>
+  <p class="jumbotron">description: <%= item.description %></li>
+  <ul class="list-group">
+    <li class="list-group-item">category: <%= item.category %></li>
+    <li class="list-group-item">tag: <%= item.tag %></li>
+    <li class="list-group-item"> <span class="badge badge-secondary">price: <%= item.price_in_cents / 100 %> € </span></li>
+    <li class="list-group-item"><%= link_to "Allez voir la fiche détaillée de l'objet", item_path(item) %></li>
+  </ul>
+  <% end %>
+</div>
+
+
+
