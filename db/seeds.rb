@@ -47,7 +47,7 @@ html_doc = Nokogiri::HTML(html_file)
 user_offset = rand(User.count)
 
 html_doc.search('.link').each do |element|
-  pust '.'
+  print '.'
   e = element.text.strip.split(':')
 
     Item.create!(
@@ -61,8 +61,7 @@ html_doc.search('.link').each do |element|
     start_date: Faker::Date.in_date_period(year: 2019, month: rand(1..12)),
     end_date: Faker::Date.in_date_period(year: 2020, month: rand(1..12)),
     lat: rand(41.00..50.00),
-    long: rand(00.20..07.14),
-    user_id: User.offset(user_offset).first
+    long: rand(0.20..7.00),
+    user: User.all.sample
   )
-
 end

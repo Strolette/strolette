@@ -44,12 +44,6 @@ ActiveRecord::Schema.define(version: 2020_01_14_231238) do
     t.index ["user_id"], name: "index_items_on_user_id"
   end
 
-  create_table "tests", force: :cascade do |t|
-    t.string "test"
-    t.datetime "created_at", precision: 6, null: false
-    t.datetime "updated_at", precision: 6, null: false
-  end
-
   create_table "users", force: :cascade do |t|
     t.string "email", default: "", null: false
     t.string "encrypted_password", default: "", null: false
