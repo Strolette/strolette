@@ -18,17 +18,20 @@ class ItemsController < ApplicationController
 
   def create
     @item = current_user.items.build(item_params)
-    if item.save
+    @item.tag = params[:item][:tag].select {|i| !i.empty?}.join(',')
+    raise
+    if @item.save
       redirect_to items_path
     else
       render new
     end
+    authorize @item
   end
 
   private
 
   def item_params
-    params.require(:item).permit(:title, :category, :tag, :description,
+    params.require(:item).permit(:title, :category, :description, :tag,
                                  :price_in_cents, :address, :availability,
                                  :start_date, :end_date, :latitude, :longitude)
   end
