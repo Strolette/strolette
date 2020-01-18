@@ -1,8 +1,8 @@
 <%= simple_form_for(@item) do |i| %>
   <%= i.input :title, placeholder: "Titre de l'object", label: 'Titre' %>
   <%= i.input :description, placeholder: "Super pousette", label: 'Description' %>
-  <%= i.select(:category, Item.select(:category).distinct.collect { |t| t.category },
-    label:'Categorie')%>
+  <%= i.select(:category, [ "Canne", "Transformable", "3 places", "Bagage cabine",
+                            "3 Roues", "1 place", "2 places"], label:'Categorie')%>
   <%= i.select(:tag, ["Stylée", "Maniable", "Esthetique", "Sportive", "Citadine",
                       "Polyvalente", "Tout-terrain", "0-6 mois", "6+ mois"], {},
               label:'Sous-catégorie', :multiple => true)%>
