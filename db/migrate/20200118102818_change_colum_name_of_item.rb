@@ -1,6 +1,6 @@
 class ChangeColumNameOfItem < ActiveRecord::Migration[6.0]
   def change
-    rename_column :item, :lat, :latitude
-    rename_column :item, :long, :longitude
+    rename_column :items, :lat, :latitude
+    rename_column :items, :long, :longitude
   end
 end
