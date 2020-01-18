@@ -1,0 +1,20 @@
+<%= simple_form_for(@item) do |i| %>
+  <%= i.input :title, placeholder: "Titre de l'object", label: 'Titre' %>
+  <%= i.input :description, placeholder: "Super pousette", label: 'Description' %>
+  <%= i.select(:category, [ "Canne", "Transformable", "3 places", "Bagage cabine",
+                            "3 Roues", "1 place", "2 places"], label:'Categorie')%>
+  <%= i.select(:tag, ["Stylée", "Maniable", "Esthetique", "Sportive", "Citadine",
+                      "Polyvalente", "Tout-terrain", "0-6 mois", "6+ mois"], {},
+              label:'Sous-catégorie', :multiple => true)%>
+  <%= i.input :price_in_cents, placeholder: "5", label: 'Prix de la location / jours' %>
+  <%= i.input :address, placeholder: "16 villa Gaudelet, 75011 Paris", label: 'Adresse' %>
+  <%= i.input :availability, as: :boolean, checked_value: true, unchecked_value: false %>
+  <%= i.input :start_date, as: :date, html5: true %>
+  <%= i.input :end_date, as: :date, html5: true %>
+  <%= i.input :latitude, placeholder: "2.05", label: 'Latitude' %>
+  <%= i.input :longitude, placeholder: "41.52", label: 'Longitude' %>
+  <%= i.submit %>
+<%end%>
+
+<%#= i.select(:category, Item.select(:category).distinct.collect { |t| [t.category, t.id]},
+    label:'Categorie')%>
