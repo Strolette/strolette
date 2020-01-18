@@ -1,0 +1,12 @@
+<div class="card mb-3">
+  <img class="card-img-top" src="https://www.bebe9.com/media/W1siZiIsIjIwMTkvMDQvMTgvNG1jYThxbXh2cV8zNjYxOTc5MDY2MjA1Nl8yXy5qcGciXSxbInAiLCJjb252ZXJ0IiwiLXJlc2l6ZSA0MzV4NDM1IC1iYWNrZ3JvdW5kIHdoaXRlIC1ncmF2aXR5IGNlbnRlciAtZXh0ZW50IDQzNXg0MzUiXV0/36619790662056%20%282%29.jpg?sha=4f7733595c5016e3" alt="Card image cap">
+  <div class="card-body">
+    <h2 class="card-title"><%= @item.title %></h2>
+    <p class="card-text"><%= @item.description %></p>
+    <h5 class="card-title">Catégories : <%= @item.category %></h5>
+    <h5 class="card-title">Labels : <%= @item.tag %></h5>
+    <h5 class="card-title">Disponible à : <%= @item.address %> de <%= @item.start_date %> à <%= @item.end_date %></h5>
+    <span class="badge badge-secondary">Prix à la journée: <%= @item.price_in_cents / 100 %> € </span>
+    <p class="card-text"><small class="text-muted">Disponible : <%= @item.availability%></small></p>
+  </div>
+</div>
