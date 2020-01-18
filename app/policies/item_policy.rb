@@ -14,6 +14,11 @@ class ItemPolicy < ApplicationPolicy
   end
 
   def new?
-    true
+    user
   end
+
+  def create?
+    user
+  end
+
 end
