@@ -9,4 +9,9 @@ class ItemsController < ApplicationController
     @items = Item.all
     @items = policy_scope(Item)
   end
+
+  def new
+    @item = Item.new
+    authorize @item
+  end
 end

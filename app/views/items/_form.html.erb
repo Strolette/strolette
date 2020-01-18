@@ -1,0 +1,12 @@
+<%= simple_form_for(@item) do |i| %>
+  <%= i.input :title, placeholder: "Titre de l'object", label: 'Titre' %>
+  <%= i.select(:category, Item.select(:category).distinct.collect { |t| [t.category, t.id]}, {},
+    label:'Categorie')%>
+  <%= i.select(:tag, Item.select(:tag).collect { |t| [t.tag, t.id]}, {},
+    label:'Sous-catégorie', :multiple => true)%>
+
+  <%= i.submit %>
+<%end%>
+
+<%#= i.select(:category, Item.all.order(:category).collect { |a| [a.category, a.id]}, {}, label:'Tags', :multiple => true, input_html: { class: 'select2' })%>
+<!-- input_html: { class: 'select2' } -->
