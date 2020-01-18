@@ -8,5 +8,8 @@
     <h5 class="card-title">Disponible à : <%= @item.address %> de <%= @item.start_date %> à <%= @item.end_date %></h5>
     <span class="badge badge-secondary">Prix à la journée: <%= @item.price_in_cents / 100 %> € </span>
     <p class="card-text"><small class="text-muted">Disponible : <%= @item.availability%></small></p>
+    <div class="card-footer">
+      <small class="text-muted"><%= link_to "Revenir à la liste des objets", items_path %></small>
+    </div>
   </div>
 </div>
