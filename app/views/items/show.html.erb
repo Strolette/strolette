@@ -9,7 +9,8 @@
     <span class="badge badge-secondary">Prix à la journée: <%= @item.price_in_cents / 100 %> € </span>
     <p class="card-text"><small class="text-muted">Disponible : <%= @item.availability%></small></p>
     <div class="card-footer">
-      <small class="text-muted"><%= link_to "Revenir à la liste des objets", items_path %></small>
+      <button type="button" class="btn btn-secondary"><%= link_to "Revenir à la liste des objets", items_path %></button>
+      <button type="button" class="btn btn-success"><%= link_to "Réserver cette poussette", new_user_path %></button>
     </div>
   </div>
 </div>
