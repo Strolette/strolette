@@ -1,8 +1,4 @@
-
-
-
-
-
+<% @items.each do |item| %>
 <div class="container">
   Page de tous les items
   <% @items.each do |item| %>
@@ -16,53 +12,4 @@
   </ul>
   <% end %>
 </div>
-
-
-<link href='https://fonts.googleapis.com/css?family=Open+Sans:400,600,700' rel='stylesheet' type='text/css'>
-
-<% @items.each do |item| %>
-<div id="make-3D-space">
-    <div id="product-card">
-        <div id="product-front">
-          <div class="shadow"></div>
-            <img src="https://s3-us-west-2.amazonaws.com/s.cdpn.io/245657/t-shirt.png" alt="" />
-            <div class="image_overlay"></div>
-            <div id="view_details"><%= link_to "Allez voir la fiche détaillée de l'objet", item_path(item) %></div>
-            <div class="stats">
-                <div class="stats-container">
-                    <span class="product_price"><%= item.price_in_cents / 100 %></span>
-                    <span class="product_name"><%= item.title %></span>
-                    <p><%= item.description %></p>
-                </div>
-            </div>
-        </div>
-        <div id="product-back">
-          <div class="shadow"></div>
-            <div id="carousel">
-                <ul>
-                    <li><img src="https://s3-us-west-2.amazonaws.com/s.cdpn.io/245657/t-shirt-large.png" alt="" /></li>
-                    <li><img src="https://s3-us-west-2.amazonaws.com/s.cdpn.io/245657/t-shirt-large2.png" alt="" /></li>
-                    <li><img src="https://s3-us-west-2.amazonaws.com/s.cdpn.io/245657/t-shirt-large3.png" alt="" /></li>
-                </ul>
-                <div class="arrows-perspective">
-                    <div class="carouselPrev">
-                        <div class="y"></div>
-                      <div class="x"></div>
-                    </div>
-                    <div class="carouselNext">
-                        <div class="y"></div>
-                      <div class="x"></div>
-                    </div>
-                </div>
-            </div>
-            <div id="flip-back">
-              <div id="cy"></div>
-                <div id="cx"></div>
-            </div>
-        </div>
-    </div>
-</div>
 <% end %>
-
-  <script src="https://ajax.googleapis.com/ajax/libs/jquery/1.11.2/jquery.min.js"></script>
-
