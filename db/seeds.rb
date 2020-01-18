@@ -55,7 +55,7 @@ html_doc.search('.link').each do |element|
     category: category.sample,
     tag: tag.sample,
     description: Faker::Lorem.paragraph(sentence_count: 5),
-    price_in_cents: rand(5..15),
+    price_in_cents: rand(500..1500),
     address: "#{Faker::Address.street_address}, #{Faker::Address.zip_code} #{Faker::Address.state}",
     availability: [true, false].sample,
     start_date: Faker::Date.in_date_period(year: 2019, month: rand(1..12)),
