@@ -60,8 +60,8 @@ html_doc.search('.link').each do |element|
     availability: [true, false].sample,
     start_date: Faker::Date.in_date_period(year: 2019, month: rand(1..12)),
     end_date: Faker::Date.in_date_period(year: 2020, month: rand(1..12)),
-    lat: rand(41.00..50.00),
-    long: rand(0.20..7.00),
+    latitude: rand(41.00..50.00),
+    longitude: rand(0.20..7.00),
     user: User.all.sample
   )
 end
