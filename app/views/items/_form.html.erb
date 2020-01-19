@@ -11,8 +11,7 @@
   <%= i.input :availability, as: :boolean, checked_value: true, unchecked_value: false %>
   <%= i.input :start_date, as: :date, html5: true %>
   <%= i.input :end_date, as: :date, html5: true %>
-  <%= i.input :latitude, placeholder: "2.05", label: 'Latitude' %>
-  <%= i.input :longitude, placeholder: "41.52", label: 'Longitude' %>
+  <%= i.input :photo, as: :file %>
   <%= i.submit %>
 <%end%>
 
