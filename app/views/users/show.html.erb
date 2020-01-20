@@ -1,0 +1,20 @@
+
+<div class="container">
+  <div class="d-flex justify-content-end">
+    <%= link_to edit_user_registration_path, class: "btn btn-secondary mb-2" do %>
+    Edit Profile
+    <% end %>
+  </div>
+  <div class="card d-flex flex-row align-items-center">
+    <div class="image-wrap p-3">
+      <img class='rounded-circle' src="https://ae01.alicdn.com/kf/HTB18bifaI2vU1JjSZFwq6x2cpXak/Men-Classic-Oversized-Sunglasses-Men-Square-Fashion-Glasses-for-Women-High-Quality-Retro-Sun-Glasses-Vintage.jpg" alt="cocuou" height="100px">
+    </div>
+    <div class="user-infos p-3">
+      <h3 class="name"><%= @user.first_name %> <%= @user.last_name %></h3>
+      <p class="email"><%= @user.bio %></p>
+      <span class="address"><%= @user.address %></span>
+    </div>
+  </div>
+</div>
+
+
