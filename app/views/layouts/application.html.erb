@@ -14,9 +14,9 @@
     <%= render 'shared/navbar' %>
     <%= render 'shared/flashes' %>
 
-    <div class="container mt-3">
     <%= yield %>
-    </div>
+
+    <%= render 'shared/footer' %>
     <%= javascript_include_tag 'application' %>
     <%= javascript_pack_tag 'application' %>
   </body>

@@ -12,8 +12,8 @@ class ItemsController < ApplicationController
     else
       @items = Item.all
     end
-    @items = policy_scope(Item)
-    authorize @items
+    @bob = policy_scope(Item)
+    authorize @bob
   end
 
   def new

@@ -1,27 +1,94 @@
+<%= render 'shared/banner' %>
+
 <div class="container">
-      <div class ="container-form">
-        <form role="form">
-         <p>Louez une poussette et plus encore pour bébé sur roulebibi</p>
-            <div class="form-group">
-            </div>
-            <div class="form-group">
-                <label for="pwd">Début</label>
-                <input type="date" class="form-control" id="pwd">
-            </div>
-            <div class="form-group">
-                <label for="pwd">Fin</label>
-                <input type="date" class="form-control" id="pwd">
-            </div>
-            <div class="form-group">
-            <label for="exampleFormControlSelect1">Type de poussette</label>
-            <select class="form-control" id="exampleFormControlSelect1">
-                <option>Type 1</option>
-                <option>Type 2</option>
-                <option>Type 3</option>
-                <option>Type 4</option>
-                <option>Type 5</option>
-            </select>
-            <button type="submit" class="btn btn-default">Je trouve ma poussette</button>
-        </form>
+  <div class="row">
+    <div class="col-6">
+      <form>
+        <div class="form-group">
+          <label for="beginning_date">Début</label>
+          <input type="date" class="form-control" id="beginning_date">
+        </div>
+
+        <div class="form-group">
+          <label for="end_date">Début</label>
+          <input type="date" class="form-control" id="end_date">
+        </div>
+
+        <div class="form-group">
+          <label for="category_selection">Example select</label>
+          <select class="form-control" id="category_selection">
+            <option>Canne</option>
+            <option>Transformable</option>
+            <option>1 place</option>
+            <option>2 places</option>
+            <option>3 places</option>
+            <option>Bagage cabine</option>
+            <option>3 Roues</option>
+          </select>
+        </div>
+
+        <div class="form-group">
+          <label for="address_input">Adresse pour récupérer la poussette</label>
+          <input type="text" class="form-control" id="address_input">
+        </div>
+      </form>
     </div>
+
+    <div class="col-6">
+      <img src="https://i.picsum.photos/id/241/200/300.jpg">
+    </div>
+  </div>
+</div>
+
+<div class="container">
+  <div class="row">
+    <div class="col-4">
+      <% item = Item.order("RANDOM()").first %>
+        <div class="card">
+        <img class="card-img-top" src="https://source.unsplash.com/800x600/?stroller, <%= [1,2,1,3,456,5,7,613].sample %>" alt="Card image cap">
+        <div class="card-body">
+        <h4 class="card-title"><%= item.title %></h4>
+      <h5 class="card-title"><%= item.category %></h5>
+      <p class="card-text"><%= item.description %></p>
+      <p class="card-text">Prix: <%= item.price_in_cents / 100 %> € </p>
+    </div>
+    <div class="card-footer">
+      <small class="text-muted"><%= link_to "Fiche détaillée de l'objet", item_path(item) %></small>
+    </div>
+  </div>
+    </div>
+
+    <div class="col-4">
+      <% item = Item.order("RANDOM()").first %>
+        <div class="card">
+        <img class="card-img-top" src="https://source.unsplash.com/800x600/?stroller, <%= [1,2,1,3,456,5,7,613].sample %>" alt="Card image cap">
+        <div class="card-body">
+        <h4 class="card-title"><%= item.title %></h4>
+      <h5 class="card-title"><%= item.category %></h5>
+      <p class="card-text"><%= item.description %></p>
+      <p class="card-text">Prix: <%= item.price_in_cents / 100 %> € </p>
+    </div>
+    <div class="card-footer">
+      <small class="text-muted"><%= link_to "Fiche détaillée de l'objet", item_path(item) %></small>
+    </div>
+  </div>
+    </div>
+
+    <div class="col-4">
+      <% item = Item.order("RANDOM()").first %>
+        <div class="card">
+        <img class="card-img-top" src="https://source.unsplash.com/800x600/?stroller, <%= [1,2,1,3,456,5,7,613].sample %>" alt="Card image cap">
+        <div class="card-body">
+        <h4 class="card-title"><%= item.title %></h4>
+      <h5 class="card-title"><%= item.category %></h5>
+      <p class="card-text"><%= item.description %></p>
+      <p class="card-text">Prix: <%= item.price_in_cents / 100 %> € </p>
+    </div>
+    <div class="card-footer">
+      <small class="text-muted"><%= link_to "Fiche détaillée de l'objet", item_path(item) %></small>
+    </div>
+  </div>
+    </div>
+
+  </div>
 </div>
