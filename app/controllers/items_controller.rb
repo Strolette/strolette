@@ -9,6 +9,14 @@ class ItemsController < ApplicationController
   def index
     @items = Item.all
     @items = policy_scope(Item)
+
+    @markers = @items.map do |item|
+      {
+        lat: item.latitude,
+        lng: item.longitude
+      }
+    end
+
     authorize @items
   end
 
