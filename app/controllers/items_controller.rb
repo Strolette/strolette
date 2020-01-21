@@ -7,7 +7,11 @@ class ItemsController < ApplicationController
   end
 
   def index
-    @items = Item.all
+    if params[:query].present?
+      @items = Item.where(category: params[:query])
+    else
+      @items = Item.all
+    end
     @items = policy_scope(Item)
     authorize @items
   end
@@ -34,6 +38,6 @@ class ItemsController < ApplicationController
   def item_params
     params.require(:item).permit(:title, :category, :description, :tag,
                                  :price_in_cents, :address, :availability,
-                                 :start_date, :end_date, :latitude, :longitude)
+                                 :start_date, :end_date, :latitude, :longitude, :query)
   end
 end
