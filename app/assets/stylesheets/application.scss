@@ -11,8 +11,10 @@
 // Your CSS partials
 @import "components/index";
 @import "components/button";
-@import "pages/index";
+@import "components/map";
+@import "components/card";
 
 
 // Pages
 @import "pages/devise/new";
+@import "pages/index";

@@ -1,7 +1,34 @@
 .card-deck {
   display: grid;
   grid-template-columns: 1fr 1fr 1fr;
-  grid-gap: 16px;
+  grid-gap: 8px;
+  margin: 0;
+  flex-grow: 1;
+  .card {
+    margin:0;
+    h2 {font-size:20px; font-weight:700}
+  }
+}
+.card-title {height:80px;}
+
+.card-text {
+  font-family: Lato;
+}
+
+.price {
+    position: absolute;
+    background-color: $white;
+    display: flex;
+    justify-content:center;
+    align-items:center;
+    padding: 20px;
+    height: 80px;
+    width: 80px;
+    border-radius: 50%;
+    border: 1px solid grey;
+    top: 180px;
+    right: 10px;
+    text-align: center;
 }
 
 // Smallest device

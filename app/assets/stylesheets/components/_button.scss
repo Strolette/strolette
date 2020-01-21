@@ -2,7 +2,6 @@
   width: 100%;
 }
 
-
 .btn-ghost {
   color: #FFF;
   border: 1px solid #FFF;
@@ -38,5 +37,17 @@
   &:hover {
   background: linear-gradient(#147EFF, #0F67DA);
   color: white;
+  }
+}
+
+.btn-reservation {
+  display: inline-flex;
+  background-color: $green;
+  border-radius: 4px;
+  font-weight: bold;
+  padding: 8px 48px;
+  color: $white;
+  &:hover{
+    color: green;
   }
 }
