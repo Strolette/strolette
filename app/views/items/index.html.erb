@@ -1,17 +1,26 @@
-<div class="card-deck">
-  <% @items.each do |item| %>
-  <div class="card">
-    <img class="card-img-top" src="https://source.unsplash.com/800x600/?stroller, <%= [1,2,1,3,456,5,7,613].sample %>" alt="Card image cap">
-    <div class="card-body">
-      <h4 class="card-title"><%= item.title %></h4>
-      <h5 class="card-title"><%= item.category %></h5>
-      <p class="card-text"><%= item.description %></p>
-      <p class="card-text">Prix: <%= item.price_in_cents / 100 %> € </p>
-    </div>
-    <div class="card-footer">
-      <small class="text-muted"><%= link_to "Fiche détaillée de l'objet", item_path(item) %></small>
-    </div>
-  </div>
-  <% end %>
-</div>
 
+<div class="d-flex">
+  <div class="card-deck">
+    <% @items.each do |item| %>
+    <div class="card">
+      <img class="card-img-top" src="https://source.unsplash.com/800x600/?stroller, <%= [1,2,1,3,456,5,7,613].sample %>" alt="Card image cap">
+      <div class="card-body">
+        <h4 class="card-title"><%= item.title %></h4>
+        <h5 class="card-title"><%= item.category %></h5>
+        <p class="card-text"><%= item.description %></p>
+        <p class="card-text">Prix: <%= item.price_in_cents / 100 %> € </p>
+      </div>
+      <div class="card-footer">
+        <small class="text-muted"><%= link_to "Fiche détaillée de l'objet", item_path(item) %></small>
+      </div>
+    </div>
+    <% end %>
+  </div>
+  <div
+  id="map"
+  style="width: 100%;
+  height: 600px;"
+  data-markers="<%= @markers.to_json %>"
+  data-mapbox-api-key="<%= ENV['MAPBOX_API_KEY'] %>"
+  ></div>
+</div>
