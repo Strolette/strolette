@@ -1,12 +1,3 @@
-<%= form_tag items_path, method: :get do %>
-  <%= text_field_tag :query,
-    params[:query],
-    class: "form-control",
-    placeholder: "Trouvez une poussette"
-  %>
-  <%= submit_tag "Search", class: "btn btn-primary" %>
-<% end %>
-
 <div class="card-deck">
   <% @items.each do |item| %>
   <div class="card">
