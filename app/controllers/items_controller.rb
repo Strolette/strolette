@@ -7,13 +7,24 @@ class ItemsController < ApplicationController
   end
 
   def index
-    if params[:query].present?
-      @items = Item.where(category: params[:query])
-    else
-      @items = Item.all
-    end
-    @bob = policy_scope(Item)
-    authorize @bob
+
+      if params[:query].present?
+        @items = Item.where(category: params[:query])
+      else
+        @items = Item.all
+      end
+
+      @markers = @items.map do |item|
+        {
+          lat: item.latitude,
+          lng: item.longitude,
+          infoWindow: render_to_string(partial: "info_window", locals: { item: item })
+          # image_url: helpers.asset_url('REPLACE_THIS_WITH_YOUR_IMAGE_IN_ASSETS')
+        }
+      end
+
+      @bob = policy_scope(Item)
+      authorize @bob
   end
 
   def new

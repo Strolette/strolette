@@ -11,6 +11,7 @@
 // Your CSS partials
 @import "components/index";
 @import "components/button";
+
 @import "pages/index";
 @import "components/alert";
 @import "components/footer";
@@ -18,7 +19,9 @@
 @import "components/banner";
 @import "components/card";
 @import "components/navbar";
+@import "components/map";
 
 
 // Pages
 @import "pages/devise/new";
+@import "pages/index";
