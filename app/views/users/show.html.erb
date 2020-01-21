@@ -1,10 +1,12 @@
 
 <div class="container">
-  <div class="d-flex justify-content-end">
-    <%= link_to edit_user_registration_path, class: "btn btn-secondary mb-2" do %>
-    Edit Profile
-    <% end %>
-  </div>
+  <% if policy(@user).edit? %>
+    <div class="d-flex justify-content-end">
+      <%= link_to edit_user_registration_path, class: "btn btn-secondary mb-2" do %>
+      Edit Profile
+      <% end %>
+    </div>
+  <% end %>
   <div class="card d-flex flex-row align-items-center">
     <div class="image-wrap p-3">
       <img class='rounded-circle' src="https://ae01.alicdn.com/kf/HTB18bifaI2vU1JjSZFwq6x2cpXak/Men-Classic-Oversized-Sunglasses-Men-Square-Fashion-Glasses-for-Women-High-Quality-Retro-Sun-Glasses-Vintage.jpg" alt="cocuou" height="100px">
