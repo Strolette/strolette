@@ -20,16 +20,16 @@ firstname = []
 lastname = []
 address = []
 
-File.readlines('firstname.txt').each do |line|
-  firstname << line
+File.readlines('db/seed_data/firstname.txt').each do |line|
+  firstname << line.chomp
 end
 
-File.readlines('lastname.txt').each do |line|
-  lastname << line
+File.readlines('db/seed_data/lastname.txt').each do |line|
+  lastname << line.chomp
 end
 
-File.readlines('address.txt').each do |line|
-  address << line
+File.readlines('db/seed_data/address.txt').each do |line|
+  address << line.chomp
 end
 
 
@@ -37,12 +37,13 @@ number_of_users.times do
   print "."
   User.create!(
     email: Faker::Internet.email,
-    first_name: firstname.sample,
-    last_name: lastname.sample,
+    first_name: firstname.sample.capitalize,
+    last_name: lastname.sample.upcase,
     phone: Faker::PhoneNumber.cell_phone,
     address: "#{address.sample} France",
     password:  'secret',
     password_confirmation: 'secret',
+    bio: Faker::Quote.most_interesting_man_in_the_world,
   )
 end
 
