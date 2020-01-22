@@ -20,18 +20,27 @@ firstname = []
 lastname = []
 address = []
 
-File.readlines('firstname').each do |line|
-
+File.readlines('firstname.txt').each do |line|
+  firstname << line
 end
+
+File.readlines('lastname.txt').each do |line|
+  lastname << line
+end
+
+File.readlines('address.txt').each do |line|
+  address << line
+end
+
 
 number_of_users.times do
   print "."
   User.create!(
     email: Faker::Internet.email,
-    first_name: Faker::Name.first_name,
-    last_name: Faker::Name.last_name,
+    first_name: firstname.sample,
+    last_name: lastname.sample,
     phone: Faker::PhoneNumber.cell_phone,
-    address: "#{Faker::Address.street_address}, #{Faker::Address.zip_code} #{Faker::Address.state}",
+    address: "#{address.sample} France",
     password:  'secret',
     password_confirmation: 'secret',
   )
