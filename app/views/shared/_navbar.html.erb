@@ -21,6 +21,7 @@
             <div class="dropdown-menu dropdown-menu-right" aria-labelledby="navbarDropdown">
               <%= link_to "Mon compte", user_path(current_user), class: "dropdown-item" %>
               <%= link_to "Mes locations", "#", class: "dropdown-item" %>
+              <%= link_to "Mettre un objet en location", new_item_path, class: "dropdown-item border-top" %>
               <%= link_to "Déconnexion", destroy_user_session_path, method: :delete, class: "dropdown-item border-top" %>
             </div>
         </li>
