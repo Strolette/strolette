@@ -51,3 +51,18 @@
     color: green;
   }
 }
+
+.btn-edit-item {
+  position: absolute;
+  top: 15px;
+  right: 15px;
+  color: #000;
+  font-size: 14px;
+  font-weight: lighter;
+  opacity: 0.4;
+  i {opacity: 0}
+  &:hover, &:hover i {
+    opacity: 0.6;
+    transition-duration: 0.3s;
+  }
+}

@@ -7,9 +7,10 @@
   .card {
     margin:0;
     h2 {font-size:20px; font-weight:700}
+    h3 {font-size:20px; font-weight:700}
   }
 }
-.card-title {height:80px;}
+.card-title {max-height:80px;}
 
 .card-text {
   font-family: Lato;
