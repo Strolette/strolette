@@ -2,7 +2,6 @@
   width: 100%;
 }
 
-
 .btn-ghost {
   color: #FFF;
   border: 1px solid #FFF;
@@ -38,5 +37,32 @@
   &:hover {
   background: linear-gradient(#147EFF, #0F67DA);
   color: white;
+  }
+}
+
+.btn-reservation {
+  display: inline-flex;
+  background-color: $green;
+  border-radius: 4px;
+  font-weight: bold;
+  padding: 8px 48px;
+  color: $white;
+  &:hover{
+    color: green;
+  }
+}
+
+.btn-edit-item {
+  position: absolute;
+  top: 15px;
+  right: 15px;
+  color: #000;
+  font-size: 14px;
+  font-weight: lighter;
+  opacity: 0.4;
+  i {opacity: 0}
+  &:hover, &:hover i {
+    opacity: 0.6;
+    transition-duration: 0.3s;
   }
 }

@@ -8,17 +8,21 @@ class ItemsController < ApplicationController
   end
 
   def index
-    @items = Item.all
-    @items = policy_scope(Item)
-
+    if params[:query].present?
+      @items = Item.where(category: params[:query])
+    else
+      @items = Item.all
+    end
     @markers = @items.map do |item|
       {
         lat: item.latitude,
-        lng: item.longitude
+        lng: item.longitude,
+        infoWindow: render_to_string(partial: "info_window", locals: { item: item })
+        # image_url: helpers.asset_url('REPLACE_THIS_WITH_YOUR_IMAGE_IN_ASSETS')
       }
     end
-
-    authorize @items
+    @bob = policy_scope(Item)
+    authorize @bob
   end
 
   def new
@@ -43,6 +47,6 @@ class ItemsController < ApplicationController
   def item_params
     params.require(:item).permit(:title, :category, :description, :tag, :photo,
                                  :price_in_cents, :address, :availability,
-                                 :start_date, :end_date, :latitude, :longitude)
+                                 :start_date, :end_date, :latitude, :longitude, :query)
   end
 end
