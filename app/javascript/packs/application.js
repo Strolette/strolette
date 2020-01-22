@@ -1,4 +1,4 @@
-  import "bootstrap";
+import "bootstrap";
 
 // for complete automaticaly address form
 import { initAutocomplete } from '../plugins/init_autocomplete';
@@ -10,3 +10,12 @@ import 'mapbox-gl/dist/mapbox-gl.css';
 import { initMapbox } from '../plugins/init_mapbox';
 
 initMapbox();
+
+// for date selection
+import flatpickr from "flatpickr"
+
+document.addEventListener("turbolinks:load", () => {
+  flatpickr("data-behavior='flatpickr'", {
+
+  })
+})

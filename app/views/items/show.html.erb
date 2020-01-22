@@ -12,6 +12,13 @@
     <h5 class="card-title">Disponible à : <%= @item.address %> de <%= @item.start_date %> à <%= @item.end_date %></h5>
     <span class="badge badge-secondary">Prix à la journée: <%= @item.price_in_cents / 100 %> € </span>
     <p class="card-text"><small class="text-muted">Disponible : <%= @item.availability%></small></p>
+
+    <%= simple_form_for(@booking) do |b|%>
+      <%= b.input :start_date, as: :date, html5: true, :input_html => { :class => "booking_flat" } %>
+      <%= b.input :end_date, as: :date, html5: true %>
+      <%= b.submit %>
+    <% end %>
+
     <div class="card-footer">
       <small class="text-muted"><%= link_to "Revenir à la liste des objets", items_path %></small>
     </div>
