@@ -75,12 +75,10 @@ html_doc.search('.link').each do |element|
     tag: tag.sample,
     description: Faker::Lorem.paragraph(sentence_count: 5),
     price_in_cents: rand(500..1500),
-    address: "#{Faker::Address.street_address}, #{Faker::Address.zip_code} #{Faker::Address.state}",
+    address: "#{address.sample} France",
     availability: [true, false].sample,
     start_date: Faker::Date.in_date_period(year: 2019, month: rand(1..12)),
     end_date: Faker::Date.in_date_period(year: 2020, month: rand(1..12)),
-    latitude: rand(41.00..50.00),
-    longitude: rand(0.20..7.00),
-    user: User.all.sample
+    user: User.all.sample,
   )
 end
