@@ -11,10 +11,14 @@
   <div class="card d-flex flex-row align-items-center my-5">
   <% end %>
     <% if @user.photo.attached? %>
-      <%= cl_image_tag @user.photo.key, height: 100, width: 100, crop: :scale, class:'rounded-circle' %>
+      <%= cl_image_tag @user.photo.key, height: 100, width: 100, crop: :scale, class:'rounded-circle border border-gray p-3 m-3' %>
     <% else %>
       <div class="image-wrap p-3">
-        <%= image_tag('profil-image.svg', height:'100', width:'100', class:'border border-light rounded-circle p-3') %>
+        <% if policy(@user).edit? %>
+          <%= render 'photo_form', user: current_user %>
+        <% else %>
+          <%= image_tag('profil-image.svg', height:'100', width:'100', class:'border border-gray rounded-circle p-3') %>
+        <% end %>
       </div>
     <% end %>
     <div class="card-title p-3">
