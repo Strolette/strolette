@@ -10,9 +10,13 @@
   <% else %>
   <div class="card d-flex flex-row align-items-center my-5">
   <% end %>
-    <div class="image-wrap p-3">
-      <img class='rounded-circle' src="https://ae01.alicdn.com/kf/HTB18bifaI2vU1JjSZFwq6x2cpXak/Men-Classic-Oversized-Sunglasses-Men-Square-Fashion-Glasses-for-Women-High-Quality-Retro-Sun-Glasses-Vintage.jpg" alt="cocuou" height="100px">
-    </div>
+    <% if @user.photo.attached? %>
+      <%= cl_image_tag @user.photo.key, height: 100, width: 100, crop: :scale, class:'rounded-circle' %>
+    <% else %>
+      <div class="image-wrap p-3">
+        <%= image_tag('profil-image.svg', height:'100', width:'100', class:'border border-light rounded-circle p-3') %>
+      </div>
+    <% end %>
     <div class="card-title p-3">
       <h3 class="name"><%= @user.first_name %> <%= @user.last_name %></h3>
       <p class="email"><%= @user.bio %></p>
