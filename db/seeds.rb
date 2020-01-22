@@ -15,6 +15,15 @@ User.destroy_all
 number_of_users = 30
 num_of_stroller = 77
 
+
+firstname = []
+lastname = []
+address = []
+
+File.readlines('firstname').each do |line|
+
+end
+
 number_of_users.times do
   print "."
   User.create!(
