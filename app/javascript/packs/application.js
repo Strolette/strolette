@@ -12,5 +12,16 @@ import { initMapbox } from '../plugins/init_mapbox';
 initMapbox();
 
 // for date selection
-// import flatpickr from "flatpickr";
 
+import "../plugins/flatpickr";
+import flatpickr from "flatpickr";
+import "flatpickr/dist/flatpickr.min.css"; // Note this is important!
+
+const bdate = document.getElementById('bdate');
+
+flatpickr(".datepicker", {
+  mode: "range",
+  dateFormat: "Y-m-d",
+  minDate: bdate.dataset.startDate,
+  maxDate: bdate.dataset.endDate
+})
