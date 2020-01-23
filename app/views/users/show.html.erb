@@ -10,9 +10,17 @@
   <% else %>
   <div class="card d-flex flex-row align-items-center my-5">
   <% end %>
-    <div class="image-wrap p-3">
-      <img class='rounded-circle' src="https://ae01.alicdn.com/kf/HTB18bifaI2vU1JjSZFwq6x2cpXak/Men-Classic-Oversized-Sunglasses-Men-Square-Fashion-Glasses-for-Women-High-Quality-Retro-Sun-Glasses-Vintage.jpg" alt="cocuou" height="100px">
-    </div>
+    <% if @user.photo.attached? %>
+      <%= cl_image_tag @user.photo.key, height: 100, width: 100, crop: :scale, class:'rounded-circle border border-gray p-3 m-3' %>
+    <% else %>
+      <div class="image-wrap p-3">
+        <% if policy(@user).edit? %>
+          <%= render 'photo_form', user: current_user %>
+        <% else %>
+          <%= image_tag('profil-image.svg', height:'100', width:'100', class:'border border-gray rounded-circle p-3') %>
+        <% end %>
+      </div>
+    <% end %>
     <div class="card-title p-3">
       <h3 class="name"><%= @user.first_name %> <%= @user.last_name %></h3>
       <p class="email"><%= @user.bio %></p>
@@ -25,9 +33,17 @@
       <% @items.each do |item| %>
         <div class="card">
           <% if item.photo.attached? %>
+<<<<<<< HEAD
             <%= cl_image_tag '#', height: 250, width: 300, crop: :scale, class:'card-img-top' %>
+=======
+            <%= link_to item_path(item) do %>
+              <%= cl_image_tag item.photo.key, height: 250, width: 300, crop: :scale, class:'card-img-top' %>
+            <% end %>
+>>>>>>> master
           <% else %>
-            <img class="card-img-top" src="https://source.unsplash.com/800x600/?stroller, <%= [1,2,1,3,456,5,7,613].sample %>" alt="Card image cap">
+            <%= link_to item_path(item) do %>
+              <img class="card-img-top" src="https://source.unsplash.com/800x600/?stroller, <%= [1,2,1,3,456,5,7,613].sample %>" alt="Card image cap">
+            <% end %>
           <% end %>
           <% if policy(@user).edit? %>
             <div>
@@ -37,7 +53,9 @@
             </div>
           <% end %>
           <div class="card-body">
-            <h3 class="card-title"><%= item.title %></h3>
+              <%= link_to item_path(item) do %>
+              <h3 class="card-title"><%= item.title %></h3>
+              <% end %>
             <span class="badge badge-secondary mb-2"><%= item.category %></span>
             <p class="card-text"><%= item.description %></p>
             <p><%= item.availability %></p>

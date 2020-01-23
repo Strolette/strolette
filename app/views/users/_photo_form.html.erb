@@ -1,0 +1,6 @@
+<%= simple_form_for(@user) do |f| %>
+<div class="text-center">
+  <%= f.input :photo, type: :submit,  input_html: { hidden: true }, label: image_tag('profil-image.svg', height:'100', width:'100', class:'border border-gray rounded-circle p-3') %>
+  <%= f.submit 'Upload', class:'btn' %>
+</div>
+<% end %>
