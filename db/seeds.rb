@@ -50,11 +50,10 @@ end
 puts "Erase all Item data"
 Item.destroy_all
 
-category = [ "Canne", "Transformable", "3 places",
-             "Bagage cabine", "3 Roues", "1 place", "2 places"]
+category = [ "2 places", "3 places", "3 roues", "Bagage cabine", "Canne" ]
 
 tag =["Stylée", "Maniable", "Esthetique", "Sportive", "Citadine", "Polyvalente",
-      "Tout-terrain", "0-6 mois", "6+ mois"]
+      "Tout-terrain", "0-6 mois", "6+ mois", "Bagage cabine"]
 
 #Scrape a stroller title:
 
