@@ -17,11 +17,9 @@
           <%= link_to "Messages", "#", class: "nav-link" %>
         </li>
         <li class="nav-item dropdown">
-          <% if current_user.photo.attached? %>
-            <%= cl_image_tag user.photo.key, height: 250, width: 300, crop: :scale, class:'card-img-top' %>
-          <% else %>
+
             <%= image_tag "https://kitt.lewagon.com/placeholder/users/ssaunier", class: "avatar dropdown-toggle", id: "navbarDropdown", data: { toggle: "dropdown" }, 'aria-haspopup': true, 'aria-expanded': false %>
-          <% end %>
+
             <div class="dropdown-menu dropdown-menu-right" aria-labelledby="navbarDropdown">
               <%= link_to "Mon compte", user_path(current_user), class: "dropdown-item" %>
               <%= link_to "Mes locations", "#", class: "dropdown-item" %>
