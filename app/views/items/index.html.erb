@@ -3,7 +3,7 @@
     <div class="card-deck">
       <% @items.each do |item| %>
       <div class="card">
-        <img class="card-img-top" src="https://source.unsplash.com/800x600/?stroller, <%= [1,2,1,3,456,5,7,613].sample %>" alt="Card image cap">
+        <img class="card-img-top" src="https://source.unsplash.com/800x600/?stroller, <%= (0..200).to_a.sample %>" alt="Card image cap">
         <div class="card-body">
           <h2 class="card-title"><%= item.title %></h2>
           <span class="badge badge-secondary mb-2"><%= item.category %></span>

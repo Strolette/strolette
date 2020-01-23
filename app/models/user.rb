@@ -7,4 +7,5 @@ class User < ApplicationRecord
   has_many :items, dependent: :destroy
   has_many :bookings, dependent: :destroy
   validates :email, uniqueness: true
+  has_one_attached :photo
 end
