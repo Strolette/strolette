@@ -7,8 +7,10 @@ class ItemsController < ApplicationController
   end
 
   def index
-    if params[:query].present?
-      @items = Item.where(category: params[:query])
+    if params[:category].present? && params[:start_date].present? && params[:end_date].present?
+      @items = Item.where("category = :category AND start_date <= :start_date AND end_date >= :end_date",
+  {category: params[:category], start_date: params[:start_date], end_date: params[:end_date]})
+      # && (start_date: params[:start_date].to_date) && (end_date: params[:end_date].to_date)
     else
       @items = Item.all
     end

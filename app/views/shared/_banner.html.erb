@@ -1,22 +1,22 @@
 <div class="banner" style="background-image: linear-gradient(rgba(0,0,0,0.4),rgba(0,0,0,0.4)), url(https://zupimages.net/up/20/04/4co3.jpg);">
-  <div class="row">
-    <div class="col-7">
-  <div class="container">
+  <div class="Formulaire">
+  <div class="row justify-content-around mr-md-3">
+    <div class="col-8">
     <h1>Louez aujourd'hui une poussette!</h1>
-    <form>
+    <form action="/items" method="get">
         <div class="form-group">
           <label for="beginning_date"><h3>Quand voulez-vous la louer ?</h3></label>
-          <input type="date" class="form-control" id="beginning_date">
+          <input name="start_date" type="date" class="form-control" id="beginning_date">
         </div>
 
         <div class="form-group">
           <label for="end_date"><h3>Quand voulez-vous la rendre ?</h3></label>
-          <input type="date" class="form-control" id="end_date">
+          <input name="end_date" type="date" class="form-control" id="end_date">
         </div>
 
         <div class="form-group">
           <label for="category_selection"><h3>De quel type de poussette avez-vous besoin ?</h3></label>
-          <select class="form-control" id="category_selection">
+          <select name="category" class="form-control" id="category_selection">
             <option>2 places</option>
             <option>3 places</option>
             <option>3 roues</option>
@@ -31,10 +31,10 @@
         </div>
         <button type="submit" class="btn btn-flat">Submit</button>
       </form>
-    </div>
-      <div class="col-5">
       </div>
     </div>
+      <div class="col-4">
+      </div>
   </div>
 </div>
 
