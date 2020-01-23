@@ -20,7 +20,7 @@
             <% if current_user.photo.attached? %>
               <%= cl_image_tag current_user.photo.key, height: 40, width: 40, crop: :scale, class:'rounded-circle avatar dropdown-toggle', id: "navbarDropdown", data: { toggle: "dropdown" }, 'aria-haspopup': true, 'aria-expanded': false %>
             <% else %>
-                  <%= image_tag('profil-image.svg', height:'40', width:'40', class:'rounded-circle') %>
+                  <%= image_tag('profil-image.svg', height:'40', width:'40', class:'rounded-circle avatar dropdown-toggle', id: "navbarDropdown", data: { toggle: "dropdown" }, 'aria-haspopup': true, 'aria-expanded': false) %>
             <% end %>
             <div class="dropdown-menu dropdown-menu-right" aria-labelledby="navbarDropdown">
               <%= link_to "Mon compte", user_path(current_user), class: "dropdown-item" %>
