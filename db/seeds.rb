@@ -32,6 +32,16 @@ File.readlines('db/seed_data/address.txt').each do |line|
   address << line.chomp
 end
 
+User.create!(
+    email: "test@test.com",
+    first_name: firstname.sample.capitalize,
+    last_name: lastname.sample.upcase,
+    phone: Faker::PhoneNumber.cell_phone,
+    address: "#{address.sample} France",
+    password:  '123456',
+    password_confirmation: '123456',
+    bio: Faker::Quote.most_interesting_man_in_the_world,
+  )
 
 number_of_users.times do
   print "."
@@ -46,6 +56,7 @@ number_of_users.times do
     bio: Faker::Quote.most_interesting_man_in_the_world,
   )
 end
+
 
 puts "Erase all Item data"
 Item.destroy_all
@@ -62,7 +73,6 @@ url = "https://www.natalys.com/balade/poussette?srule=price-high-to-low&start=0&
 html_file = open(url).read
 html_doc = Nokogiri::HTML(html_file)
 
-user_offset = rand(User.count)
 
 html_doc.search('.link').each do |element|
   print '.'
