@@ -1,5 +1,6 @@
 .navbar-lewagon {
   justify-content: space-between;
+  padding: 15px 0;
   background: #F2F2F2;
 }
 
@@ -8,7 +9,11 @@
 }
 
 .navbar-lewagon .navbar-brand img {
-  width: 40px;
+  width: 80px;
+}
+
+.navbar .dropdown {
+  margin-left: 20px;
 }
 
 // Navbar buttons
