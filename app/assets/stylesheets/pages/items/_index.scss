@@ -1,0 +1,20 @@
+.price {
+    position: absolute;
+    background-color: $white;
+    display: flex;
+    justify-content:center;
+    align-items:center;
+    padding: 20px;
+    height: 80px;
+    width: 80px;
+    border-radius: 50%;
+    border: 1px solid grey;
+    bottom: -10px;
+    right: 10px;
+    text-align: center;
+    &.price-text-medium {
+      font-size: 14px;
+      font-weight: bold;
+      line-height: 20px;
+    }
+}

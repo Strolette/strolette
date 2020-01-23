@@ -3,13 +3,19 @@
     <div class="card-deck">
       <% @items.each do |item| %>
       <div class="card">
-        <img class="card-img-top" src="https://source.unsplash.com/800x600/?stroller, <%= (0..200).to_a.sample %>" alt="Card image cap">
+        <div class="position-relative">
+          <%= link_to item_path(item) do %>
+          <img class="card-img-top" src="https://source.unsplash.com/800x600/?stroller, <%= (0..200).to_a.sample %>" alt="Card image cap">
+          <% end %>
+          <div class="card-text price price-text-medium"><%= item.price_in_cents / 100 %> €<br>/ jour</div>
+        </div>
         <div class="card-body">
+          <%= link_to item_path(item) do %>
           <h2 class="card-title"><%= item.title %></h2>
+          <% end %>
           <span class="badge badge-secondary mb-2"><%= item.category %></span>
           <p class="card-text"><%= item.description %></p>
         </div>
-        <div class="card-text price"><%= item.price_in_cents / 100 %> €<br>/ jour</div>
         <div class="d-flex justify-content-center mb-3">
           <%= link_to item_path(item), class:'btn btn-reservation' do %>
           Réserver
