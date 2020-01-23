@@ -12,7 +12,6 @@
 @import "components/index";
 @import "components/button";
 
-@import "pages/index";
 @import "components/alert";
 @import "components/footer";
 @import "components/avatar";
@@ -23,6 +22,8 @@
 
 
 // Pages
+@import "pages/index";
 @import "pages/devise/new";
 @import "pages/users/show";
+@import "pages/items/index";
 @import "pages/index";
