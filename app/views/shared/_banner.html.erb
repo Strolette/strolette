@@ -1,10 +1,40 @@
-<div class="container-sm">
-<div class="banner" style="background-image: linear-gradient(rgba(0,0,0,0.4),rgba(0,0,0,0.4)), url(https://raw.githubusercontent.com/lewagon/fullstack-images/master/uikit/background.png);">
-  <div class="container-sm">
-    <h1>Louez aujourd'hui <strong>votre poussette </strong> de <strong>demain</strong>!</h1>
-    <p>Partez enfin l'esprit libre en déplacement.</p>
-    <%= link_to "Nos poussettes", items_path, class: "btn btn-flat" %>
+<div class="banner" style="background-image: linear-gradient(rgba(0,0,0,0.4),rgba(0,0,0,0.4)), url(https://zupimages.net/up/20/04/4co3.jpg);">
+  <div class="row">
+    <div class="col-7">
+  <div class="container">
+    <h1>Louez aujourd'hui une poussette!</h1>
+    <form>
+        <div class="form-group">
+          <label for="beginning_date"><h3>Quand voulez-vous la louer ?</h3></label>
+          <input type="date" class="form-control" id="beginning_date">
+        </div>
+
+        <div class="form-group">
+          <label for="end_date"><h3>Quand voulez-vous la rendre ?</h3></label>
+          <input type="date" class="form-control" id="end_date">
+        </div>
+
+        <div class="form-group">
+          <label for="category_selection"><h3>De quel type de poussette avez-vous besoin ?</h3></label>
+          <select class="form-control" id="category_selection">
+            <option>2 places</option>
+            <option>3 places</option>
+            <option>3 roues</option>
+            <option>Bagage cabine</option>
+            <option>Canne</option>
+          </select>
+        </div>
+
+        <div class="form-group">
+          <label for="address_input"><h3>Autour de quelle adresse voulez-vous la récupérer ?</h3></label>
+          <input type="text" class="form-control" id="address_input">
+        </div>
+        <button type="submit" class="btn btn-flat">Submit</button>
+      </form>
+    </div>
+      <div class="col-5">
+      </div>
+    </div>
   </div>
-</div>
 </div>
 
