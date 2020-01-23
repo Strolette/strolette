@@ -12,10 +12,5 @@ import { initMapbox } from '../plugins/init_mapbox';
 initMapbox();
 
 // for date selection
-import flatpickr from "flatpickr"
+// import flatpickr from "flatpickr";
 
-document.addEventListener("turbolinks:load", () => {
-  flatpickr("data-behavior='flatpickr'", {
-
-  })
-})
