@@ -12,6 +12,14 @@
     <h5 class="card-title">Disponible à : <%= @item.address %> de <%= @item.start_date %> à <%= @item.end_date %></h5>
     <span class="badge badge-secondary">Prix à la journée: <%= @item.price_in_cents / 100 %> € </span>
     <p class="card-text"><small class="text-muted">Disponible : <%= @item.availability%></small></p>
+
+    <%= simple_form_for :search, method: "get" do |f| %>
+      <%= f.input :start_date, as: :string, required: false,
+      input_html: {class: "datepicker", id: "bdate",
+      data: { start_date: @item.start_date.to_date, end_date: @item.end_date.to_date }} %>
+      <%= f.button :submit, "Go", class: "btn btn-primary" %>
+    <% end %>
+    </div>
     <div class="card-footer">
       <button type="button" class="btn btn-secondary"><%= link_to "Revenir à la liste des objets", items_path %></button>
       <button type="button" class="btn btn-success"><%= link_to "Réserver cette poussette", "#" %></button>
