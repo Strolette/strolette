@@ -13,7 +13,7 @@ puts "Erase all User data"
 User.destroy_all
 
 number_of_users = 30
-num_of_stroller = 77
+num_of_stroller = 80
 
 
 firstname = []
@@ -57,7 +57,7 @@ number_of_users.times do
   )
 end
 
-
+puts ""
 puts "Erase all Item data"
 Item.destroy_all
 
@@ -90,4 +90,11 @@ html_doc.search('.link').each do |element|
     end_date: Faker::Date.in_date_period(year: 2020, month: rand(1..12)),
     user: User.all.sample,
   )
+end
+
+#correct bad Geolocalisation
+
+bad_geoloc = Item.where(longitude: nil)
+bad_geoloc.each do |item|
+  item.destroy
 end
