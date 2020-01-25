@@ -52,6 +52,9 @@
     display: flex;
     flex-direction:row;
     width:100%;
+    .form-goup-booking {
+      width: 50% !important;
+    }
     .form-group #beginning_date {
       border-top-right-radius : 0px;
       border-bottom-right-radius : 0px;
