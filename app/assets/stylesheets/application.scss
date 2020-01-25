@@ -19,6 +19,7 @@
 @import "components/card";
 @import "components/navbar";
 @import "components/map";
+@import "components/user_profil";
 
 
 // Pages
@@ -26,4 +27,5 @@
 @import "pages/devise/new";
 @import "pages/users/show";
 @import "pages/items/index";
+@import "pages/items/show";
 @import "pages/index";
