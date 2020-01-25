@@ -1,40 +1,43 @@
 <div class="banner" style="background-image: linear-gradient(rgba(0,0,0,0.4),rgba(0,0,0,0.4)), url(https://zupimages.net/up/20/04/4co3.jpg);">
-  <div class="Formulaire">
-  <div class="row justify-content-around mr-md-3">
-    <div class="col-8">
-    <h1>Louez aujourd'hui une poussette!</h1>
-    <form action="/items" method="get">
-        <div class="form-group">
-          <label for="beginning_date"><h3>Quand voulez-vous la louer ?</h3></label>
-          <input name="start_date" type="date" class="form-control" id="beginning_date">
-        </div>
+  <div class="home-form-container col-sm-8 col-xs-10 col-lg-4 offset-lg-2">
+    <div class="form-block">
+      <div>
+        <h1>Louez aujourd'hui une poussette!</h1>
+        <form action="/items" method="get">
+          <div class="booking-dates">
+            <div class="form-group">
+              <label for="beginning_date">Début</label>
+              <input name="start_date" type="date" class="form-control" id="beginning_date">
+            </div>
+            <div class="form-group">
+              <label for="end_date">Fin</label>
+              <input name="end_date" type="date" class="form-control" id="end_date">
+            </div>
+          </div>
 
-        <div class="form-group">
-          <label for="end_date"><h3>Quand voulez-vous la rendre ?</h3></label>
-          <input name="end_date" type="date" class="form-control" id="end_date">
-        </div>
+          <div class="form-group">
+            <label for="address_input">Où voulez-vous la récupérer ?</label>
+            <input type="text" class="form-control" id="address_input">
+          </div>
 
-        <div class="form-group">
-          <label for="category_selection"><h3>De quel type de poussette avez-vous besoin ?</h3></label>
-          <select name="category" class="form-control" id="category_selection">
-            <option>2 places</option>
-            <option>3 places</option>
-            <option>3 roues</option>
-            <option>Bagage cabine</option>
-            <option>Canne</option>
-          </select>
-        </div>
-
-        <div class="form-group">
-          <label for="address_input"><h3>Autour de quelle adresse voulez-vous la récupérer ?</h3></label>
-          <input type="text" class="form-control" id="address_input">
-        </div>
-        <button type="submit" class="btn btn-flat">Submit</button>
-      </form>
+          <div class="form-group">
+            <label for="category_selection">De quel type de poussette avez-vous besoin ?</label>
+            <select name="category" class="form-control" id="category_selection">
+              <option>2 places</option>
+              <option>3 places</option>
+              <option>3 roues</option>
+              <option>Bagage cabine</option>
+              <option>Canne</option>
+            </select>
+          </div>
+          <div class="d-flex justify-content-end mt-3">
+            <button type="submit" class="btn btn-reservation">Réserver</button>
+          </div>
+        </form>
       </div>
     </div>
-      <div class="col-4">
-      </div>
+    <div class="col-4">
+    </div>
   </div>
 </div>
 
