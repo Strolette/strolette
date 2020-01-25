@@ -1,28 +1,136 @@
-<div class="card mb-3">
-  <!-- <img class="card-img-top" src="https://www.bebe9.com/media/W1siZiIsIjIwMTkvMDQvMTgvNG1jYThxbXh2cV8zNjYxOTc5MDY2MjA1Nl8yXy5qcGciXSxbInAiLCJjb252ZXJ0IiwiLXJlc2l6ZSA0MzV4NDM1IC1iYWNrZ3JvdW5kIHdoaXRlIC1ncmF2aXR5IGNlbnRlciAtZXh0ZW50IDQzNXg0MzUiXV0/36619790662056%20%282%29.jpg?sha=4f7733595c5016e3" alt="Card image cap"> -->
-  <!-- Ci-dessous pour integrer image cloudinary -->
-  <div class="card-card-img-top">
-    <%= cl_image_tag(@item.photo.key, crop: :fill) if @item.photo.attached? %>
-  </div>
-  <div class="card-body">
-    <h2 class="card-title"><%= @item.title %></h2>
-    <p class="card-text"><%= @item.description %></p>
-    <h5 class="card-title">Catégories : <%= @item.category %></h5>
-    <h5 class="card-title">Labels : <%= @item.tag %></h5>
-    <h5 class="card-title">Disponible à : <%= @item.address %> de <%= @item.start_date %> à <%= @item.end_date %></h5>
-    <span class="badge badge-secondary">Prix à la journée: <%= @item.price_in_cents / 100 %> € </span>
-    <p class="card-text"><small class="text-muted">Disponible : <%= @item.availability%></small></p>
-
-    <%= simple_form_for :search, method: "get" do |f| %>
-      <%= f.input :start_date, as: :string, required: false,
-      input_html: {class: "datepicker", id: "bdate",
-      data: { start_date: @item.start_date.to_date, end_date: @item.end_date.to_date }} %>
-      <%= f.button :submit, "Go", class: "btn btn-primary" %>
+<div class="container">
+  <div class="image-top text-center">
+    <% if @item.photo.attached? %>
+    <%= cl_image_tag @item.photo.key, height: 100, width: 100, crop: :scale, class:'rounded-circle border border-gray p-3 m-3' %>
+    <% else %>
+    <img class="card-img" src="https://www.bebe9.com/media/W1siZiIsIjIwMTkvMDQvMTgvNG1jYThxbXh2cV8zNjYxOTc5MDY2MjA1Nl8yXy5qcGciXSxbInAiLCJjb252ZXJ0IiwiLXJlc2l6ZSA0MzV4NDM1IC1iYWNrZ3JvdW5kIHdoaXRlIC1ncmF2aXR5IGNlbnRlciAtZXh0ZW50IDQzNXg0MzUiXV0/36619790662056%20%282%29.jpg?sha=4f7733595c5016e3" alt="Card image cap">
     <% end %>
+  </div>
+  <div class="d-flex flex-row">
+    <div class="item-content-container col-sm-8">
+      <div class="item-content">
+        <h1 class="item-content-title"><%= @item.title %></h1>
+        <p class="item-content-description"><%= @item.description %></p>
+        <div class="tags">
+          <span class="badge badge-primary"><%= @item.category %></span>
+          <span class="badge badge-secondary"><%= @item.tag %></span>
+        </div>
+        <div class="item-location-container">
+          <h3>Localisation de l'objet</h3>
+          <div class="item-location">
+            <div class="location-details">
+              <div class="marker"><i class="fas fa-map-marker-alt"></i></div>
+              <div class="location-address">Disponible à : <%= @item.address %> de <%= @item.start_date %> à <%= @item.end_date %></div>
+            </div>
+            <div
+            id="map"
+            data-markers="<%= @markers.to_json %>"
+            data-mapbox-api-key="<%= ENV['MAPBOX_API_KEY'] %>"
+            ></div>
+          </div>
+        </div>
+      </div>
+      <div class="profile-container">
+        <div class="user-profile">
+          <%= image_tag("https://source.unsplash.com/200x200/?person/#{(0..200).to_a.sample}", height:'100', width:'100', class:'rounded-circle') %>
+          <div class="d-flex flex-column">
+            <div class="profile-identity">
+              <%= link_to user_path(@item.user) do %>
+              <h3 class="profile-name big">Objet proposé par <%= @item.user.first_name %> <%= @item.user.last_name.first %>.</h3>
+              <% end %>
+              <div class="profile-infos">
+                <div><i class="fas fa-mobile-alt"></i> N° de portable vérifié</div>
+                <div class="connexion-infos">Membre depuis
+                  <%= ["janvier", "février" , "avril", "mai", "juin", "juillet", "aout", "septembre", "octobre", "novembre", "décembre"].sample %>
+                  20<%= (17..20).to_a.sample %>   ·   Vu la dernière fois le <%= Faker::Time.between(from: DateTime.now - 14, to: DateTime.now, format: :short) %>
+                </div>
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+      <div class="item-description-container">
+        <h3>Informations sur la Poussette</h3>
+        <div class="item-characteristics">
+          <div class="item-characteritics-block">
+            <div class="row-characteritics">
+              <div class="icon">
+                <i class="fas fa-registered"></i>
+              </div>
+              <div class="characteritics-details">
+                <span class="charac-title">Marque</span>
+                <div class="charac-detail"><%= ["Babyzen", "Bugaboo", "Cybex",
+                  "Diono Dooky","Fabelab", "Kaiser", "Lassig",
+                  "Lilikim", "Mies and Co", "Natalys",
+                  "Red Castle", "Skip Hop", "WALKING MUM"].sample %>
+                </div>
+              </div>
+            </div>
+            <div class="row-characteritics">
+              <div class="icon">
+                <i class="fas fa-baby-carriage"></i>
+              </div>
+              <div class="characteritics-details">
+                <span class="charac-title">Etat</span>
+                <div class="charac-detail"><%= ["Comme neuf", "Très Bon état", "Bon état"].sample %></div>
+              </div>
+            </div>
+            <div class="row-characteritics">
+              <div class="icon">
+                <i class="fas fa-ruler-vertical"></i>
+              </div>
+              <div class="characteritics-details">
+                <span class="charac-title">Dimensions</span>
+                <div class="charac-detail">Dimensions ouverte (PxLxH) : <%= (75..92).to_a.sample %>x<%= (48..60).to_a.sample %>x<%= (96..104).to_a.sample %></div>
+                <div class="charac-detail">Dimensions pliée (PxLxH) : <%= (65..73).to_a.sample %>x<%= (35..44).to_a.sample %>x<%= (28..38).to_a.sample %></div>
+              </div>
+            </div>
+            <div class="row-characteritics">
+              <div class="icon">
+                <i class="fas fa-weight-hanging"></i>
+              </div>
+              <div class="characteritics-details">
+                <span class="charac-title">Poids</span>
+                <div class="charac-detail"><%= (7..13).to_a.sample %> kg</div>
+              </div>
+            </div>
+          </div>
+          <div class="item-characteritics-block">
+            <div class="row-characteritics">
+              <div class="icon">
+                <i class="fas fa-baby"></i>
+              </div>
+              <div class="characteritics-details">
+                <span class="charac-title">Age</span>
+                <div class="charac-detail"><%= ["0-3","4-6","6+" ].sample %></div>
+              </div>
+            </div>
+            <div class="row-characteritics">
+              <div class="icon">
+                <i class="fas fa-weight"></i>
+              </div>
+              <div class="characteritics-details">
+                <span class="charac-title">Poids</span>
+                <div class="charac-detail"><%= ["0-18","9-18"].sample %></div>
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
     </div>
-    <div class="card-footer">
-      <button type="button" class="btn btn-secondary"><%= link_to "Revenir à la liste des objets", items_path %></button>
-      <button type="button" class="btn btn-success"><%= link_to "Réserver cette poussette", "#" %></button>
+    <div class="col-md-4 col-lg-offset-1 mt6 sticky">
+      <div class="card d-flex flex-column">
+        <%= simple_form_for :search, method: "get" do |f| %>
+        <%= f.input :start_date, as: :string, required: false,
+        input_html: {class: "datepicker", id: "bdate",
+          data: { start_date: @item.start_date.to_date, end_date: @item.end_date.to_date }} %>
+          <%= f.button :submit, "Go", class: "btn btn-primary" %>
+          <% end %>
+          <span class="badge badge-secondary">Prix à la journée: <%= @item.price_in_cents / 100 %> € </span>
+        </div>
+      </div>
     </div>
   </div>
-</div>
+
+
+

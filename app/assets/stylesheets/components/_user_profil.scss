@@ -1,0 +1,39 @@
+.card-profile {
+  display: flex;
+  align-items:center;
+  img {margin-right: 10px;}
+}
+
+.profile-name {
+  font-size: 15px; font-weight: 600;
+  &.big {font-size: 20px;}
+}
+.response-time {font-size: 13px; color: $dark-grey}
+
+.profile-container {
+  display: flex;
+  flex-direction: row;
+  border-bottom: 1px solid $ecru;
+  border-top: 1px solid $ecru;
+  margin: 2rem 0;
+  padding: 2rem;
+}
+
+.user-profile {
+  display: flex;
+  flex-direction: row;
+  align-items:center;
+}
+
+.profile-identity {
+  padding: 0 1rem;
+  .profile-infos {
+    padding-top: 1rem;
+    i {
+      font-size:18px;
+      color: $water-green;
+      margin-right: 5px
+    }
+    .connexion-infos {color: $light-grey}
+  }
+}

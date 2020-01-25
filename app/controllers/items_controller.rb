@@ -4,6 +4,13 @@ class ItemsController < ApplicationController
   def show
     @item = Item.find(params[:id])
     @booking = Booking.new
+
+    @markers =
+      {
+        lat: @item.latitude,
+        lng: @item.longitude
+      }
+
     authorize @item
   end
 

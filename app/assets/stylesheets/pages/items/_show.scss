@@ -1,0 +1,100 @@
+.item-content-container {
+}
+
+.item-content {
+  display: flex;
+  flex-direction: column;
+  p {margin:0}
+  .item-content-title {
+    color: $dark-grey;
+  }
+  .item-content-description {
+    padding: 2rem 0;
+    font-size: 18px;
+    color: $blue-grey;
+  }
+  .tags {
+    border-top: 1px solid $ecru;
+    border-bottom: 1px solid $ecru;
+    padding: 1rem 0;
+    .badge {
+      margin-right: 0.5rem;
+      padding: 0.25em 0.4em;
+      font-weight: 700;
+      line-height: 1;
+      text-align: center;
+      border-radius: 2px;
+      width: 120px;
+      font-size: 15px;
+    }
+  }
+}
+
+.item-location-container {
+  padding: 2rem 0;
+  .item-location {
+    display:flex;
+    flex-direction:row;
+  }
+  .location-details {
+    padding: 1rem 0;
+    display: flex;
+    flex-direction:row;
+    .marker {
+      border-radius:25px;
+      border: 1px solid $dark-grey;
+      width: 40px;
+      height: 40px;
+    }
+    .marker i {
+      color:$rose;
+      font-size:25px;
+    }
+  }
+}
+
+
+
+.item-description-container {}
+
+.item-characteristics {
+  display:flex;
+  flex-direction: row;
+  padding: 1rem 2rem;
+  .item-characteritics-block {
+    display:flex;
+    flex-direction:column;
+    padding-right: 2rem;
+  }
+}
+
+.row-characteritics {
+  display:flex;
+  flex-direction:row;
+  align-items:center;
+  justify-content: space-around;
+  margin-bottom: 1rem;
+  .icon {
+    width: 40px;
+    i {
+      font-size: 30px;
+      color: $water-green;
+      display: flex;
+      justify-content: space-around;
+    }
+  }
+  .characteritics-details {
+    display:flex;
+    flex-direction:column;
+    flex-grow: 1;
+    padding: 0 1rem;
+    .charac-title {
+      font-weight: bold;
+      font-size: 18px;
+      color: $blue-grey;
+    }
+    .charac-detail {
+      font-size: 12px;
+    }
+  }
+}
