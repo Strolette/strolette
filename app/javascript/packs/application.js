@@ -20,7 +20,7 @@ const bdate = document.getElementById('bdate');
 
 flatpickr(".datepicker", {
   mode: "range",
-  dateFormat: "d-m-Y",
+  dateFormat: "Y-m-j",
   minDate: bdate.dataset.startDate,
   maxDate: bdate.dataset.endDate
 })
