@@ -6,10 +6,10 @@ class ItemsController < ApplicationController
     @booking = Booking.new
 
     @markers =
-      {
+      [{
         lat: @item.latitude,
         lng: @item.longitude
-      }
+      }]
 
     authorize @item
   end

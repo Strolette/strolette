@@ -20,7 +20,10 @@
           <div class="item-location">
             <div class="location-details">
               <div class="marker"><i class="fas fa-map-marker-alt"></i></div>
-              <div class="location-address">Disponible à : <%= @item.address %> de <%= @item.start_date %> à <%= @item.end_date %></div>
+              <div class="location-address">
+                À proximité de :
+                <div class="address"><%= @item.address %></div>
+              </div>
             </div>
             <div
             id="map"

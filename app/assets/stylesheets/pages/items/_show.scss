@@ -31,24 +31,35 @@
 }
 
 .item-location-container {
-  padding: 2rem 0;
+  padding: 2rem 0 0 0;
   .item-location {
     display:flex;
     flex-direction:row;
+    align-items:center;
+    margin: 2rem 0;
   }
   .location-details {
     padding: 1rem 0;
     display: flex;
     flex-direction:row;
     .marker {
-      border-radius:25px;
-      border: 1px solid $dark-grey;
-      width: 40px;
-      height: 40px;
+      border-radius:50%;
+      box-shadow: 0 0 8px 0 rgba(0,0,0,.1);
+      width: 50px;
+      height: 50px;
+      display: flex;
+      justify-content:center;
+      align-items:center;
     }
     .marker i {
       color:$rose;
       font-size:25px;
+    }
+    .location-address {
+      padding: 0 1rem;
+      color: $light-grey;
+      font-size:14px;
+      .address {color:$water-green; font-weight:600; font-size:16px}
     }
   }
 }
