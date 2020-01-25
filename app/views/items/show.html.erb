@@ -4,7 +4,7 @@
     <% if @item.photo.attached? %>
     <%= cl_image_tag @item.photo.key, height: 100, width: 100, crop: :scale, class:'rounded-circle border border-gray p-3 m-3' %>
     <% else %>
-    <img class="card-img" src="https://www.bebe9.com/media/W1siZiIsIjIwMTkvMDQvMTgvNG1jYThxbXh2cV8zNjYxOTc5MDY2MjA1Nl8yXy5qcGciXSxbInAiLCJjb252ZXJ0IiwiLXJlc2l6ZSA0MzV4NDM1IC1iYWNrZ3JvdW5kIHdoaXRlIC1ncmF2aXR5IGNlbnRlciAtZXh0ZW50IDQzNXg0MzUiXV0/36619790662056%20%282%29.jpg?sha=4f7733595c5016e3" alt="Card image cap">
+    <img class="card-img item-banner cover" src="https://source.unsplash.com/800x600/?stroller, <%= (0..200).to_a.sample %>" alt="Card image cap">
     <% end %>
   </div>
   <div class="d-flex flex-row">
