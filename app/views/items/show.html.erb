@@ -1,5 +1,5 @@
 <div class="container">
-  <div class="image-top text-center">
+  <div class="image-top text-center bg-primary">
     <% if @item.photo.attached? %>
     <%= cl_image_tag @item.photo.key, height: 100, width: 100, crop: :scale, class:'rounded-circle border border-gray p-3 m-3' %>
     <% else %>
@@ -121,15 +121,15 @@
         </div>
       </div>
     </div>
-    <div class="col-md-4 col-lg-offset-1 mt6 sticky">
-      <div class="card d-flex flex-column">
+    <div class="booking-form-container col-md-4 col-lg-offset-1">
+      <div class="booking-form d-flex flex-column">
         <%= simple_form_for :search, method: "get" do |f| %>
         <%= f.input :start_date, as: :string, required: false,
         input_html: {class: "datepicker", id: "bdate",
           data: { start_date: @item.start_date.to_date, end_date: @item.end_date.to_date }} %>
-          <%= f.button :submit, "Go", class: "btn btn-primary" %>
+          <%= f.button :submit, "Réserver", class: "text-center w-80" %>
           <% end %>
-          <span class="badge badge-secondary">Prix à la journée: <%= @item.price_in_cents / 100 %> € </span>
+          <!-- <span class="badge badge-secondary">Prix à la journée: <%= @item.price_in_cents / 100 %> € </span> -->
         </div>
       </div>
     </div>
