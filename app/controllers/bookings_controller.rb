@@ -12,6 +12,9 @@ class BookingsController < ApplicationController
 
   def index
     @bookings = policy_scope(Booking).where(user_id: current_user.id)
+    @books = Booking.where(user_id: current_user.id)
+    # @user = User.find(current_user.id)
+    # @items = Item.find(@book.item_id)
   end
 
 end
