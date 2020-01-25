@@ -1,41 +1,38 @@
-<% @books.each do |booking| %>
 
-  <div class="card-deck my-4">
-    <div class="card">
-      <div>
-        <%= link_to item_path(booking.item), class:'card-body' do %>
+   <div class="card-deck my-4">
+      <% @books.each do |booking| %>
+        <div class="card">
+        <div>
+          <%= link_to item_path(booking.item) do %>
           <img class="card-img" src="https://source.unsplash.com/800x600/?stroller, <%= (0..200).to_a.sample %>" alt="Card image cap">
+          <% end %>
+        </div>
+        <%= link_to item_path(booking.item), class:'card-body' do %>
+        <div class="card-content">
+          <span class="badge badge-primary mb-2"><%= booking.item.category %></span> <span class="badge badge-secondary mb-2"><%= booking.item.tag %></span>
 
-          <div class="card-content">
-
-            <span class="badge badge-primary mb-2"><%= booking.item.category %></span> <span class="badge badge-secondary mb-2"><%#= booking.item.tag %></span>
-            <h2 class="card-title"><%= booking.item.title %></h2>
-            <p class="card-text"><%= booking.item.description %></p>
-            <div class="card-action-container">
-
-              <div class="card-action">
-
-                <div class="card-profile">
-                  <%= image_tag("https://source.unsplash.com/200x200/?person/#{(1..200).to_a.sample}", height:'40', width:'40', class:'rounded-circle') %>
-                  <div class="d-flex flex-column">
-                    <span class="profil-name"><%= booking.item.user.first_name %> <%#= booking.item.user.last_name.first %>.</span>
-                    <span class="response-time"><%= (1..7).to_a.sample %>h de temps de réponse</span>
-                  </div>
-
-                  <div class="d-flex justify-content-center">
-                    <div class="price-text">
-                      <span class="price-text-value"><%= booking.item.price_in_cents / 100 %> €
-                      </span><br>/jour
-                    </div>
-                  </div>
-                </div>
+          <h2 class="card-title"><%= booking.item.title %></h2>
+          <p class="card-text"><%= booking.item.description %></p>
+        </div>
+        <div class="card-action-container">
+          <div class="card-action">
+            <div class="card-profile">
+              <%= image_tag("https://source.unsplash.com/200x200/?person/#{(0..200).to_a.sample}", height:'40', width:'40', class:'rounded-circle') %>
+              <div class="d-flex flex-column">
+                <span class="profil-name"><%= booking.item.user.first_name %> <%= booking.item.user.last_name.first %>.</span>
+                <span class="response-time"><%= (rand(1..7)) %>h de temps de réponse</span>
               </div>
             </div>
-
+            <div class="d-flex justify-content-center">
+              <div class="price-text">
+                <span class="price-text-value">
+                  <%= booking.item.price_in_cents / 100 %> €
+                </span><br>/jour
+              </div>
+            </div>
           </div>
-
+        </div>
         <% end %>
       </div>
+      <% end %>
     </div>
-  </div>
-<% end %>
