@@ -1,0 +1,66 @@
+.booking-form-container {
+  margin-top: -30px;
+  .booking-form {
+    border-radius: 6px;
+    box-shadow: 0 0 8px 0 rgba(0, 0, 0, 0.1);
+    background-color: #fff;
+    padding: 1rem;
+    border-top: 6px solid $rose;
+    position: sticky;
+    top: 25px;
+    input.form-control {
+      background-color: $white;
+      border-radius: 2px;
+    }
+    input[type="submit"] {
+      background-color: $rose;
+      color: $white;
+      border-radius: 6px;
+    }
+  }
+}
+
+.home-form-container {
+  padding: 0 2rem ;
+  .form-block {
+    background-color: $white;
+    border-radius: 6px;
+    display: flex;
+    justify-content: flex-start;
+    padding: 2rem;
+    box-shadow: 0 16px 40px rgba(0,0,0,0.12);
+    .form-group {
+      margin-top: 1rem;
+      margin-bottom: 0;
+      width: 100%
+    }
+    label {
+      color: $dark-grey;
+      margin-top: 1rem;
+    }
+    .form-control {
+        border: 1px solid $light-grey;
+        border-radius: 4px;
+        color: $light-grey;
+      }
+  }
+  button {
+    display:flex;
+    justify-content: flex-end;
+  }
+  .booking-dates {
+  display: flex;
+  flex-direction:row;
+  .form-group #beginning_date {
+    border-top-right-radius : 0px;
+    border-bottom-right-radius : 0px;
+  }
+  .form-group #end_date {
+    border-left : 0px;
+    border-top-left-radius : 0px;
+    border-bottom-left-radius : 0px;
+  }
+  }
+}
+
+
