@@ -8,9 +8,12 @@
     <% end %>
   </div>
   <div class="d-flex flex-row">
-    <div class="item-content-container col-sm-8">
+    <div class="item-content-container col-sm-8 mt-2">
+      <%= link_to items_path, class:'p-2 back-link' do %>
+      <i class="fas fa-chevron-left"></i> Revenir aux résultats
+      <% end %>
       <div class="item-content">
-        <h1 class="item-content-title"><%= @item.title %></h1>
+        <h1 class="item-content-title mt-3"><%= @item.title %></h1>
         <p class="item-content-description"><%= @item.description %></p>
         <div class="tags">
           <span class="badge badge-primary"><%= @item.category %></span>
@@ -46,7 +49,7 @@
                 <div><i class="fas fa-mobile-alt"></i> N° de portable vérifié</div>
                 <div class="connexion-infos">Membre depuis
                   <%= ["janvier", "février" , "avril", "mai", "juin", "juillet", "aout", "septembre", "octobre", "novembre", "décembre"].sample %>
-                  20<%= (17..20).to_a.sample %>   ·   Vu la dernière fois le <%= Faker::Time.between(from: DateTime.now - 14, to: DateTime.now, format: :short) %>
+                  20<%= (17..20).to_a.sample %>   ·   Vu la dernière fois le 15 janvier 2019 <%#= Faker::Time.between(from: DateTime.now - 14, to: DateTime.now, format: :short) %>
                 </div>
               </div>
             </div>

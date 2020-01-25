@@ -48,7 +48,9 @@
   padding: 8px 48px;
   color: $white;
   &:hover{
-    color: green;
+    background-color: $white;
+    color: $rose;
+    border: 1px solid $rose;
   }
 }
 
