@@ -42,7 +42,7 @@
           <%= image_tag("https://source.unsplash.com/200x200/?person/#{(0..200).to_a.sample}", height:'100', width:'100', class:'rounded-circle') %>
           <div class="d-flex flex-column">
             <div class="profile-identity">
-              <%= link_to user_path(@item.user) do %>
+              <%= link_to user_path(@item.user), target: "_blank" do %>
               <h3 class="profile-name big">Objet proposé par <%= @item.user.first_name %> <%= @item.user.last_name.first %>.</h3>
               <% end %>
               <div class="profile-infos">
@@ -129,7 +129,7 @@
       <div class="booking-form d-flex flex-column">
         <span class="badge badge-primary my-3 p-2">Prix à la journée : <%= @item.price_in_cents / 100 %> € </span>
         <%= simple_form_for [@item, @booking] do |f| %>
-        <%= f.input :start_date, as: :string, required: false, label: "Choississez vos dates",
+        <%= f.input :start_date, as: :string, required: false, label: "Choisissez vos dates",
         input_html: {class: "datepicker", id: "bdate",
           data: { start_date: @item.start_date.to_date, end_date: @item.end_date.to_date }} %>
           <%= f.button :submit, "Réserver", class: "text-center w-100" %>
