@@ -24,3 +24,10 @@ flatpickr(".datepicker", {
   minDate: bdate.dataset.startDate,
   maxDate: bdate.dataset.endDate
 })
+
+
+// CalDays on booking
+
+import { dateEntered } from '../components/datepicker';
+
+dateEntered();

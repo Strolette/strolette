@@ -13,5 +13,7 @@ const calcDays = () => {
 }
 
 const dateEntered = document.addEventListener('input', function (event) {
-    calcDays;
+    console.log(calcDays);
 });
+
+export { dateEntered }
