@@ -19,6 +19,7 @@
       data: { start_date: @item.start_date.to_date, end_date: @item.end_date.to_date }} %>
       <%= f.button :submit, "Reserver", class: "btn btn-primary" %>
     <% end %>
+
     </div>
     <div class="card-footer">
       <button type="button" class="btn btn-secondary"><%= link_to "Revenir à la liste des objets", items_path %></button>
