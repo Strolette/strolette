@@ -1,3 +1,4 @@
+
 <div class="container">
   <div class="image-top text-center bg-primary">
     <% if @item.photo.attached? %>
@@ -123,7 +124,7 @@
     </div>
     <div class="booking-form-container col-md-4 col-lg-offset-1">
       <div class="booking-form d-flex flex-column">
-        <%= simple_form_for :search, method: "get" do |f| %>
+        <%= simple_form_for [@item, @booking] do |f| %>
         <%= f.input :start_date, as: :string, required: false,
         input_html: {class: "datepicker", id: "bdate",
           data: { start_date: @item.start_date.to_date, end_date: @item.end_date.to_date }} %>
@@ -134,6 +135,4 @@
       </div>
     </div>
   </div>
-
-
 
