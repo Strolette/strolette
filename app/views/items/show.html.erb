@@ -124,13 +124,13 @@
     </div>
     <div class="booking-form-container col-md-4 col-lg-offset-1">
       <div class="booking-form d-flex flex-column">
+        <span class="badge badge-primary my-3 p-2">Prix à la journée : <%= @item.price_in_cents / 100 %> € </span>
         <%= simple_form_for [@item, @booking] do |f| %>
-        <%= f.input :start_date, as: :string, required: false,
+        <%= f.input :start_date, as: :string, required: false, label: "Choississez vos dates",
         input_html: {class: "datepicker", id: "bdate",
           data: { start_date: @item.start_date.to_date, end_date: @item.end_date.to_date }} %>
-          <%= f.button :submit, "Réserver", class: "text-center w-80" %>
+          <%= f.button :submit, "Réserver", class: "text-center w-100" %>
           <% end %>
-          <!-- <span class="badge badge-secondary">Prix à la journée: <%= @item.price_in_cents / 100 %> € </span> -->
         </div>
       </div>
     </div>
