@@ -1,5 +1,29 @@
 // // Specific CSS for your home-page
 
+.proprio-containter {
+  margin: 3rem 0;
+  padding: 3rem 0;
+  border-top : 1px solid $light-grey;
+  border-bottom : 1px solid $light-grey;
+  .btn-propio {
+    border-radius: 4px;
+  }
+}
+
+.logos-containter {
+  margin-bottom: 5rem;
+  .logos {
+    display: flex;
+    flex-direction: row;
+    justify-content: space-around;
+    margin: 2rem 0;
+    padding: 0 4rem;
+    img {
+      height:30px;
+      filter: grayscale(1);
+    }
+  }
+}
 
 // .container-main {
 

@@ -1,5 +1,45 @@
 <%= render 'shared/banner' %>
 
+<div class="container mt-5">
+  <h2>Explorer Roule Bibi</h2>
+  <div class="explore-cards">
+    <%= link_to items_path + "?category=canne" do %>
+      <div class="explore-card" style="background-image: linear-gradient(rgba(0,0,0,0.3), rgba(0,0,0,0.3)), url(https://cache.magicmaman.com/data/photo/w1000_ci/5g/poussettes-legeres.jpg)">
+        Poussette Canne
+      </div>
+    <% end %>
+    <%= link_to items_path + "?category=3+roues" do %>
+      <div class="explore-card" style="background-image: linear-gradient(rgba(0,0,0,0.3), rgba(0,0,0,0.3)), url(https://www.telegraph.co.uk/content/dam/wellbeing/2016/09/06/bugjog_trans_NvBQzQNjv4BqjZCqkh21MTy1LvXE-PcUNUOrSxX1mAWyZ1JcDdwlYNY.jpg)">
+        3 roues
+      </div>
+    <% end %>
+    <%= link_to items_path + "?category=2+places" do %>
+      <div class="explore-card" style="background-image: linear-gradient(rgba(0,0,0,0.3), rgba(0,0,0,0.3)), url(https://thewirecutter.com/wp-content/uploads/2018/01/doublestrollers-lowres-1010208.jpg)">
+        2 places
+      </div>
+    <% end %>
+  </div>
+</div>
+
+<div class="proprio-containter">
+    <div class="container text-center">
+      <h3>Vous êtes propriétaire d'articles d'une poussette ?</h3>
+      <p>Augmentez vos revenus en louant votre poussette</p>
+      <button class="btn btn-primary btn-propio">Mettre en location</button>
+    </div>
+</div>
+
+<div class="logos-containter">
+    <div class="container text-center">
+      <h3>Ils aiment Roule Bibi</h3>
+      <div class="logos">
+        <img src="https://upload.wikimedia.org/wikipedia/commons/d/d6/TF1_logo.svg" alt="">
+        <img src="https://upload.wikimedia.org/wikipedia/fr/f/f8/Le_Figaro_logo.svg" alt="">
+        <img src="https://upload.wikimedia.org/wikipedia/commons/9/9c/ELLE_Magazine_Logo.svg" alt="">
+      </div>
+    </div>
+</div>
+
 <!-- <div class="row">
 <div class="col-4">
 <div class="card" style="width: 18rem;">
